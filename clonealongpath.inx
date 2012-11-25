@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Clone along Path</_name>
+  <id>com.suarezsantana.e.clonealongpath</id>
+  <dependency type="executable" location="extensions">pathmodifier.py</dependency>
+  <dependency type="executable" location="extensions">clonealongpath.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <_param name="title" type="description">This effect clones a pattern object along arbitrary "skeleton" paths. The pattern is the topmost object in the selection. (groups of paths/shapes/clones... allowed)</_param>
+  <param name="yoffset" type="float" _gui-text="Vertical offset" min="-10000.0" max="10000.0">0.0</param>
+  <param name="xoffset" type="float" _gui-text="Horizontal offset" min="-10000.0" max="10000.0">0.0</param>
+  <param name="space" type="float" _gui-text="Log10 Space between copies:" min="-5.0" max="5.0">0.0</param>
+  <param name="duplicate" type="boolean" _gui-text="Duplicate the pattern before deformation">true</param>
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu _name="Generate from Path"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">clonealongpath.py</command>
+  </script>
+</inkscape-extension>
